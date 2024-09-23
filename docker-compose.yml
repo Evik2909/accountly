@@ -1,0 +1,45 @@
+services:
+  web:
+    build: .
+    container_name: apache
+    volumes:
+      - ./php_app/:/var/www/html/
+    ports:
+      - "8083:80"
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: mysqlhost
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"  # No requiere contraseña
+      MYSQL_DATABASE: accountly # Crea la base de datos "accountly"
+    volumes:
+      - db_data:/var/lib/mysql  # Persistir los datos de MySQL
+    ports:
+      - "4000:3306"  # Cambié el puerto para evitar conflictos
+    networks:
+      - app-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: db  # Nombre del servicio MySQL que se usará
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"  # Permite acceso sin contraseña
+    ports:
+      - "8084:80"  # Acceso a phpMyAdmin en el puerto 8084
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db_data:

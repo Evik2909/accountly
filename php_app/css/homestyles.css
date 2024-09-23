@@ -1,0 +1,146 @@
+*{
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    position: relative;
+}
+.general-header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-image: linear-gradient(to right, #0a4bb0, #c76be5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 20%;
+}
+.logo-container img{
+    width: 50px;
+}
+.logo-container span{
+    font-size: 30px;
+    color: #fff;
+}
+main{
+    padding: 10px;
+}
+.welcome-header{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+}
+.welcome-container{
+    position: relative;
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+.welcome-container img{
+    width: 60px;
+}
+.welcome-container .wlc-icon{
+    font-size: 80px;
+    color: #c76be5;
+}
+.welcome-container .wlc-text{
+    font-size: 40px;
+}
+.add-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 70px;
+    width: 180px;
+    background-image: linear-gradient(to right, #0a4bb0, #c76be5);
+    border: none;
+    padding: 7px;
+    border-radius: 12px;
+    color: #fff;
+    transition: scale 300ms ease;
+}
+.add-btn:hover{
+    scale :1.03;
+}
+tr.tr-style{
+    background-image: linear-gradient(to right, #0a4bb0, #c76be5);
+    
+}
+.mdl-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:all 400ms ease;
+    opacity:0;
+    pointer-events: none;
+}
+.mdl-box{
+    width: 400px;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+.mdl-box header{
+    display: flex;
+    align-items: center;
+    height: 55px;
+    padding: 10px;
+    position: relative;
+}
+.mdl-box header .mdl-icon-header{
+    font-size: 34px;
+    margin-right: 10px;
+    color: #c76be5;
+}
+.mdl-box header .mdl-text-header{
+    font-size: 24px;
+}
+.mdl-box header .mdl-cls{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: #9e9e9e;
+}
+.mdl-box form{
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.mdl-box .mdl-btn-submit{
+    width: 100%;
+    background-image: linear-gradient(to right, #0a4bb0, #c76be5);
+    border: none;
+    height: 35px;
+    margin-top: 30px;
+    border-radius: 8px;
+    color: #fff;
+}
+.showmdl{
+    opacity: 1;
+    pointer-events: all;
+}
+.dataTables_filter{
+    margin-bottom: 20px;
+}
